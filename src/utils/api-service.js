@@ -54,3 +54,10 @@ function addPerson(newName) {
     }
   });
 }
+
+export default {
+  addPerson,
+  getPeople,
+  adopt,
+  getPets,
+};
