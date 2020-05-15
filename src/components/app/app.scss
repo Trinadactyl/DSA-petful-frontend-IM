@@ -1,0 +1,94 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css");
+@import url("https://use.typekit.net/som4kpb.css");
+
+body {
+  font-family: "acumin-pro", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  // font-family: 'hobeaux', sans-serif;
+}
+
+$accent: #0678fb;
+
+// nav styling
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .container {
+    height: 6em;
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    height: 2em;
+    width: auto;
+    fill: white;
+  }
+}
+
+// hero styling
+.hero {
+  height: 30em;
+  max-height: 100vh;
+  background-image: url("../../images/photo-dog-and-cat.jpg");
+  background-color: #777;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .content {
+    text-align: center;
+    margin-top: 8em;
+    text-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  @media screen and (min-width: 500px) {
+    height: 50em;
+  }
+}
+
+// process styling
+.process {
+  padding-top: 3em;
+
+  h2 {
+    margin: 0;
+    color: $accent;
+  }
+
+  h3 {
+    color: #555;
+    line-height: 1;
+  }
+
+  p {
+    margin-bottom: 2em;
+  }
+}
+
+// footer styling
+footer {
+  margin-top: 2em;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  background: #DDD;
+}
