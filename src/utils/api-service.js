@@ -1,23 +1,25 @@
-import React from "react";
-import { URL } from "dotenv";
+import config from "../config";
+
+const { API_URL } = config;
 
 function getPets() {
-  fetch(`${URL}/pets`)
+  return fetch(`${API_URL}/pets`)
     .then((res) => {
       if (res.status !== 200) {
         throw new Error("No more pets probably");
       }
+      return res.json();
     })
-    .then((res) => res.json())
-    .then((data) => {
-      return data;
-    });
 }
 
 function adopt(petType) {
-  fetch(`${this.URL}/pets`, {
+  const data = {
+    type: petType
+  }
+  
+  return fetch(`${API_URL}/pets`, {
     method: "DELETE",
-    body: { type: JSON.stringify(petType) },
+    body: JSON.stringify(data),
     headers: {
       "content-type": "application/json",
     },
@@ -25,24 +27,24 @@ function adopt(petType) {
 }
 
 function getPeople() {
-  fetch(`${URL}/people`)
+  return fetch(`${API_URL}/people`)
     .then((res) => {
       if (res.status !== 200) {
         throw new Error("No more people somehow");
       }
+      return res.json();
     })
-    .then((res) => {
-      res.json();
-    })
-    .then((data) => {
-      return data;
-    });
+    .then(data => data.people);
 }
 
 function addPerson(newName) {
-  fetch(`${this.URL}/people`, {
+  const newPerson = {
+    name: newName
+  };
+
+  return fetch(`${API_URL}/people`, {
     method: "Post",
-    body: { type: JSON.stringify({ name: newName }) },
+    body: JSON.stringify(newPerson),
     headers: {
       "content-type": "application/json",
     },
