@@ -4,15 +4,8 @@
 
 body {
   font-family: "acumin-pro", sans-serif;
+  --colorAccent:#0678fb;
 }
-
-h1,
-h2,
-h3 {
-  // font-family: 'hobeaux', sans-serif;
-}
-
-$accent: #0678fb;
 
 // nav styling
 nav {
@@ -21,9 +14,12 @@ nav {
   width: 100%;
 
   .container {
-    height: 6em;
-    display: flex;
-    align-items: center;
+    .links {
+      height: 6em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   svg {
@@ -31,26 +27,32 @@ nav {
     width: auto;
     fill: white;
   }
+
+  a:not(.logo) {
+    font-size: 1.3em;
+    color: white;
+    margin-top: -0.3em;
+  }
 }
 
-// hero styling
-.hero {
-  height: 30em;
-  max-height: 100vh;
-  background-image: url("../../images/photo-dog-and-cat.jpg");
-  background-color: #777;
-  background-blend-mode: overlay;
-  background-size: cover;
-  background-position: center;
+// banner styling
+.banner {
+  background: var(--colorAccent);
+  height: 9em;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+
+  @media screen and (min-width: 550px) {
+    height: 14em;
+    justify-content: center;
+  }
 
   .content {
     text-align: center;
-    margin-top: 8em;
-    text-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5em;
   }
 
   h1,
@@ -58,29 +60,6 @@ nav {
     margin: 0;
     font-weight: bold;
     line-height: 1;
-  }
-
-  @media screen and (min-width: 500px) {
-    height: 50em;
-  }
-}
-
-// process styling
-.process {
-  padding-top: 3em;
-
-  h2 {
-    margin: 0;
-    color: $accent;
-  }
-
-  h3 {
-    color: #555;
-    line-height: 1;
-  }
-
-  p {
-    margin-bottom: 2em;
   }
 }
 

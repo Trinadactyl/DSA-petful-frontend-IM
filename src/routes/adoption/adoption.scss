@@ -1,0 +1,30 @@
+.adoption {
+  .pets {
+    margin-top: 2em;
+  }
+
+  .pet {
+    margin-bottom: 4rem;
+    img {
+      width: 100%;
+    }
+  }
+
+  .name-form {
+    display: inline-flex;
+
+    input {
+      margin-right: 1em;
+    }
+  }
+
+  .user {
+    color: var(--colorAccent);
+    font-weight: bold;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

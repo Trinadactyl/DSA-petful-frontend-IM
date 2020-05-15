@@ -1,0 +1,43 @@
+.home {
+
+  // hero styling
+  .hero {
+    height: 30em;
+    max-height: 100vh;
+    background-image: url("../../images/photo-dog-and-cat.jpg");
+    background-color: #777;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-start;
+
+    .content {
+      margin-top: 8em;
+      text-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+    }
+
+    @media screen and (min-width: 500px) {
+      height: 50em;
+    }
+  }
+
+  // process styling
+  .process {
+    padding-top: 3em;
+
+    h2 {
+      margin: 0;
+      color: var(--colorAccent);
+    }
+
+    h3 {
+      color: #555;
+      line-height: 1;
+    }
+
+    p {
+      margin-bottom: 2em;
+    }
+  }
+
+}
