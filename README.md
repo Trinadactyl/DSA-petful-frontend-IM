@@ -1,30 +1,23 @@
-# Petful Client
+# Petful
 
-## Info on adoption process
+Petful is an online pet adoption service that connects people to different shelters with pets up for adoption. We use a first-in-first-out system, so pets that have been there longest get adopted first.
 
-- Description
-- Meaningful picture
-- Button to share
+![Screenshot](./public/petful.png)
 
-## More on each pet to help in decision making
+Live app: https://petful-gamma.now.sh/<br>
+Developed by [Ian Drews](https://github.com/MediocreIan) and [Malcolm Kiano](https://github.com/malcolmkiano)
 
-- Image
-- Physical description
-- Pet's name gender age and breed
-- Story
+## How It Works
 
-## Adoption page lists only the pet next in line to be adopted
+Each shelter's adoption process is different. Here's an example of how a shelter adoption might work:
 
-- Remove pets that are adopted from queue
+1. You find a pet you want to adopt on [Petful](https://petful-gamma.now.sh/).
+2. You get in line for adoption and click **Adopt** when it's your turn. This gets sent to the shelter so they can get ready for you.
+3. One of the shelter volunteers calls you to arrange a time for you to go see the pet.
+4. You go to the shelter and see the pet. They're adorable! You fall in love.
+5. You give them your photo ID, pay the adoption fee (usually $25 to $125), get copies of the pet's vaccination records so you can get them licensedd.
+6. You take your new pet home!
 
-## Adoption queue for people too
+## Tech Used:
 
-- New adoption every 5 seconds (when not at front)
-- New person in queue every 5 seconds (when at front)
-
-## Adopt a pet (at front)
-
-- See the button to adopt a pet
-- Get confirmation on click
-- Pet is removed from adoption page
-- My name is removed from adoption queue
+Made with HTML, Sass and React.
