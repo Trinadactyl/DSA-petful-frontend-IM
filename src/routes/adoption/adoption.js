@@ -9,7 +9,7 @@ export default class Adoption extends Component {
       cat: null,
       dog: null,
     },
-
+    other: [],
     people: [],
     user: sessionStorage.getItem("petful-user-name") || null,
     error: null,
@@ -64,7 +64,7 @@ export default class Adoption extends Component {
   };
 
   simulateUsers() {
-    const newPerson = this.randomUsers.pop();
+    const newPerson = this.randomUsers[this.state.people.length - 1];
     ApiService.addPerson(newPerson).then(() => {
       this.getData();
     });
@@ -81,9 +81,12 @@ export default class Adoption extends Component {
         // get peeps
         ApiService.getPeople().then((people) => {
           // we got all we need
-          this.setState({
-            pets: pets,
-            people: people,
+          ApiService.getAllPets().then((allPets) => {
+            this.setState({
+              pets: pets,
+              people: people,
+              other: [...allPets.cats.slice(1, 3), ...allPets.dogs.slice(1, 3)],
+            });
           });
         });
       })
@@ -111,7 +114,7 @@ export default class Adoption extends Component {
   };
 
   render() {
-    const { people, pets, user } = this.state;
+    const { people, pets, user, other } = this.state;
     const canAdopt = (!people.length && user) || people[0] === user;
 
     return (
@@ -145,7 +148,25 @@ export default class Adoption extends Component {
               ) : (
                 <div className="pet six columns" key={type}>
                   <h3>No {type}s?</h3>
-                  <p>All our {type}s have found happy homes! Please check back later.</p>
+                  <p>
+                    All our {type}s have found happy homes! Please check back
+                    later.
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="row">
+            {other.map((pet) => {
+              return (
+                <div className="pet three columns" key={pet.name}>
+                  <img src={pet.imageURL} alt={pet.description} />
+                  <h5>{pet.name}</h5>
+                  <p className="info">
+                    {pet.breed} / {pet.gender} / {pet.age} yr
+                    {pet.age !== 1 ? "s" : ""} old
+                  </p>
+                  <p className="story">{pet.story}</p>
                 </div>
               );
             })}
